@@ -1,6 +1,7 @@
 require 'rspec'
 require 'rspec-benchmark'
 require 'airborne'
+require 'pry'
 require_relative 'yes_no_formatter'
 
 RSpec.configure do |config|

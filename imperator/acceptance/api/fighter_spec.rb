@@ -10,7 +10,7 @@ RSpec.describe 'Fighter' do
   context 'index response' do
     it 'shuold response JSON' do
       get 'http://localhost:3000/api/v1/fighters'
-      expect_json([name: 'John Doe', name: 'Foo Bar', name: 'Sir Gey'])
+      expect_json([{ name: 'John Doe' }, { name: 'Foo Bar' }, { name: 'Sir Gey' }])
     end
   end
 end
