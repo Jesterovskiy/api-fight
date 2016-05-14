@@ -13,14 +13,16 @@ defmodule PhoenixElixir.Router do
     plug :accepts, ["json"]
   end
 
-  scope "/", PhoenixElixir do
-    pipe_through :browser # Use the default browser stack
-
-    get "/", PageController, :index
-  end
+  # scope "/", PhoenixElixir do
+  #   pipe_through :browser # Use the default browser stack
+  #
+  #   get "/", PageController, :index
+  # end
 
   # Other scopes may use custom stacks.
-  # scope "/api", PhoenixElixir do
-  #   pipe_through :api
-  # end
+  scope "/api/v1", PhoenixElixir do
+    pipe_through :api
+
+    resources "/fighters", FightersController
+  end
 end
