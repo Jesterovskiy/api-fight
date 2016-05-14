@@ -5,5 +5,5 @@ require_relative '../lib/hanami_mri'
 require_relative '../apps/api/application'
 
 Hanami::Container.configure do
-  mount Api::Application, at: '/'
+  mount Api::Application, at: '/api/v1'
 end
