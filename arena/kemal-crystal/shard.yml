@@ -4,6 +4,12 @@ dependencies:
   kemal:
     github: sdogruyol/kemal
     branch: master
+  pg:
+    github: will/crystal-pg
+    version: 0.5.0
+  pool:
+    github: ysbaddaden/pool
+    branch: master
 
 authors:
   - Jester <jester.dash@gmail.com>
