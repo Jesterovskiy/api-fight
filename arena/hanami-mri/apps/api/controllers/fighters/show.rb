@@ -1,12 +1,12 @@
 module Api::Controllers::Fighters
-  class Index
+  class Show
     include Api::Action
     accept :json
-    expose :fighters
+    expose :fighter
 
     def call(params)
       self.format = :json
-      @fighters = Fighter.all
+      @fighter = Fighter[params[:id].to_s]
     end
   end
 end

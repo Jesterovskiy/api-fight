@@ -4,7 +4,7 @@ module Api::Views::Fighters
     format :json
 
     def render
-      raw JSON.generate([{ name: 'John Doe' }, { name: 'Foo Bar' }, { name: 'Sir Gey' }])
+      raw JSON.generate(fighters.map { |fighter| { id: fighter.id, name: fighter.name } })
     end
   end
 end

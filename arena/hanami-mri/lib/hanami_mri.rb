@@ -1,8 +1,10 @@
-require 'hanami/model'
-require 'hanami/mailer'
+# require 'hanami/model'
+# require 'hanami/mailer'
+Dir["#{ __dir__ }/config/**/*.rb"].each { |file| require_relative file }
 Dir["#{ __dir__ }/hanami_mri/**/*.rb"].each { |file| require_relative file }
 
-Hanami::Model.configure do
+
+# Hanami::Model.configure do
   ##
   # Database adapter
   #
@@ -16,13 +18,13 @@ Hanami::Model.configure do
   #    adapter type: :sql, uri: 'postgres://localhost/hanami_mri_development'
   #    adapter type: :sql, uri: 'mysql://localhost/hanami_mri_development'
   #
-  adapter type: :sql, uri: ENV['HANAMI_MRI_DATABASE_URL']
+  # adapter type: :sql, uri: ENV['HANAMI_MRI_DATABASE_URL']
 
   ##
   # Migrations
   #
-  migrations 'db/migrations'
-  schema     'db/schema.sql'
+  # migrations 'db/migrations'
+  # schema     'db/schema.sql'
 
   ##
   # Database mapping
@@ -35,7 +37,7 @@ Hanami::Model.configure do
   #
   # Alternatively, you can use a block syntax like the following:
   #
-  mapping do
+  # mapping do
     # collection :users do
     #   entity     User
     #   repository UserRepository
@@ -43,16 +45,16 @@ Hanami::Model.configure do
     #   attribute :id,   Integer
     #   attribute :name, String
     # end
-  end
-end.load!
+  # end
+# end.load!
 
-Hanami::Mailer.configure do
-  root "#{ __dir__ }/hanami_mri/mailers"
-
-  # See http://hanamirb.org/guides/mailers/delivery
-  delivery do
-    development :test
-    test        :test
-    # production :stmp, address: ENV['SMTP_PORT'], port: 1025
-  end
-end.load!
+# Hanami::Mailer.configure do
+#   root "#{ __dir__ }/hanami_mri/mailers"
+#
+#   # See http://hanamirb.org/guides/mailers/delivery
+#   delivery do
+#     development :test
+#     test        :test
+#     # production :stmp, address: ENV['SMTP_PORT'], port: 1025
+#   end
+# end.load!
