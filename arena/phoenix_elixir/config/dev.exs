@@ -37,6 +37,6 @@ config :phoenix_elixir, PhoenixElixir.Repo,
   adapter: Ecto.Adapters.Postgres,
   username: "rails",
   password: "rails",
-  database: "phoenix_elixir_dev",
+  database: "arena",
   hostname: "localhost",
   pool_size: 10
