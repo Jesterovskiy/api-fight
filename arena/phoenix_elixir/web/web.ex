@@ -22,7 +22,7 @@ defmodule PhoenixElixir.Web do
 
       import Ecto
       import Ecto.Changeset
-      import Ecto.Query, only: [from: 1, from: 2]
+      import Ecto.Query
     end
   end
 
@@ -32,7 +32,7 @@ defmodule PhoenixElixir.Web do
 
       alias PhoenixElixir.Repo
       import Ecto
-      import Ecto.Query, only: [from: 1, from: 2]
+      import Ecto.Query
 
       import PhoenixElixir.Router.Helpers
       import PhoenixElixir.Gettext
@@ -45,9 +45,6 @@ defmodule PhoenixElixir.Web do
 
       # Import convenience functions from controllers
       import Phoenix.Controller, only: [get_csrf_token: 0, get_flash: 2, view_module: 1]
-
-      # Use all HTML functionality (forms, tags, etc)
-      use Phoenix.HTML
 
       import PhoenixElixir.Router.Helpers
       import PhoenixElixir.ErrorHelpers
@@ -67,7 +64,7 @@ defmodule PhoenixElixir.Web do
 
       alias PhoenixElixir.Repo
       import Ecto
-      import Ecto.Query, only: [from: 1, from: 2]
+      import Ecto.Query
       import PhoenixElixir.Gettext
     end
   end

@@ -55,20 +55,7 @@ config :logger, level: :info
 #
 #     config :phoenix_elixir, PhoenixElixir.Endpoint, server: true
 #
-# You will also need to set the application root to `.` in order
-# for the new static assets to be served after a hot upgrade:
-#
-#     config :phoenix_elixir, PhoenixElixir.Endpoint, root: "."
 
 # Finally import the config/prod.secret.exs
 # which should be versioned separately.
 import_config "prod.secret.exs"
-
-# Configure your database
-config :phoenix_elixir, PhoenixElixir.Repo,
-  adapter: Ecto.Adapters.Postgres,
-  username: "rails",
-  password: "rails",
-  database: "arena",
-  hostname: "localhost",
-  pool_size: 10
